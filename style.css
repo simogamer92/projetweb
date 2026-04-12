@@ -19,7 +19,6 @@ body {
   --gold: #F3D382;
   --gold-light: #e0c070;
   --white: #ffffff;
-  --gray-text: #aaaaaa;
 }
 
 /* =============================================
@@ -45,7 +44,7 @@ body {
 }
 
 .section-desc {
-  color: var(--gray-text);
+  color: var(--white);
   font-size: 1.25rem;
   line-height: 1.7;
   margin-bottom: 40px;
@@ -250,7 +249,7 @@ body {
 
 .card-text {
   font-family: 'DM Sans', sans-serif;
-  color: var(--gray-text);
+  color: var(--white);
   font-size: 1.6rem;
   line-height: 1.8;
   margin-bottom: 20px;
@@ -316,17 +315,26 @@ body {
 }
 
 .tab {
-  color: var(--white);
   border: 2px solid #ffffff;
+  background: transparent;
+  color: var(--white);
   padding: 17px 39px;
-  text-decoration: none;
   font-size: large;
   letter-spacing: 1px;
-  background-color: transparent;
   font-family: 'Dm Sans', sans-serif;
   font-weight: 300;
+
+  cursor: pointer;
+  outline: none;
 }
 
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
 .tab.active {
   background-color: var(--gold);
   color: #1E1E1E;
@@ -367,7 +375,7 @@ body {
 }
 
 .menu-ingredients {
-  color: var(--gray-text);
+  color: var(--white);
   font-size: 1.35rem;
   line-height: 1.8;
   margin-bottom: 20px;
