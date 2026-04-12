@@ -1,6 +1,9 @@
-const toggle = document.getElementById("toogle");
-const navbar = document.getElementById("navbar");
+const toogle = document.getElementById("toogle");
+console.log(toogle);
 
-toggle.addEventListener("click", () => {
-  navbar.classList.toggle("apparait");
-});
+const navbar = document.getElementById("navbar");   
+console.log(navbar);
+
+toogle.addEventListener("click", () =>  {
+navbar.classList.toggle("apparait" );
+})

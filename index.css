@@ -1044,31 +1044,3 @@ button {
   cursor: pointer;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #1E1E1E;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .navbar.apparait .nav-links {
-    display: flex;
-  }
-}
