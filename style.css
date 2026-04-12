@@ -1,0 +1,732 @@
+/* =============================================
+   RESET & BASE
+   ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1E1E1E;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+/* =============================================
+   COLOR VARIABLES (easy to change)
+   ============================================= */
+:root {
+  --gold: #F3D382;    /* was #c9a84c */
+  --gold-light: #e0c070;
+}
+
+/* =============================================
+   REUSABLE HELPERS
+   ============================================= */
+
+/* Gold italic small text above headings */
+.section-tag {
+  font-family: 'great vibes', cursive;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.3rem;
+}
+
+/* Big section headings */
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;           /* bigger */
+  line-height: 1.15;
+  color: #F3D382;        /* back to gold */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Paragraph under section title */
+.section-desc {
+  color: var(--gray-text);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* Gold filled button */
+.btn-gold {
+  display: inline-block;
+  background-color: #E6A817;
+  color: #1E1E1E;
+  padding: 18px 50px;
+  font-family: 'Cormorant SC', bold;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);  /* golden glow around */
+}
+
+/* Transparent button with gold border */
+.btn-outline {
+  display: inline-block;
+  border: 1px solid #F3D382; 
+  color: #F3D382; 
+  padding: 10px 22px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-outline:hover,
+.btn-gold:hover {
+  opacity: 0.85;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  font-family: 'cormorant sc', serif;
+  justify-content: space-between;
+  padding: 18px 60px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;     /* this prevents stretching */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  position: absolute;      /* add this */
+  left: 50%;               /* add this */
+  transform: translateX(-50%);  /* add this — centers it perfectly */
+}
+
+.nav-links span {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-links span:hover {
+  color: var(--gold);
+}
+
+.btn-reserve {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 10px 22px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: center;       /* back to center — not flex-start */
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;         /* just offset for the navbar */
+}
+
+/* Dark overlay so text is readable over the photo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/Rectangle.png');
+  
+  background-size: cover;
+}
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 0%, transparent 100%, rgba(0, 0, 0, 0.4) 100%);   /* gentle fade */  /* matches body background */
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  padding: 0 20px;
+  margin-top: -80px;    /* pulls content slightly up */
+}
+
+.hero-subtitle {
+  font-family: 'Great Vibes', cursive;  /* more elegant italic */
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  letter-spacing: 8px;
+}
+
+/* Change title to WHITE */
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2rem;          /* between the two — not too big not too small */
+  line-height: 1.2;
+  color: #F3D382;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-desc {
+  color: #ffffff;
+  font-size: 1rem;         /* smaller — was 1.3rem */
+  line-height: 1.6;        /* tighter — was 2.2 */
+  margin-bottom: 36px;     /* less gap before button */
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============================================
+   TODAY'S SPECIAL
+   ============================================= */
+/* Make special section same dark color as hero bottom */
+/* Match body bg so transition is invisible */
+.special {
+  background-color: #1E1E1E;
+  text-align: center;
+  padding: 62px 23px
+}
+
+/* Row of 3 cards side by side */
+
+.cards-row {
+  display: flex;
+  gap: 5px;                    /* thin gap so cards are separate */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.card {
+  background-color: #1E1E1E;
+  width: 500px;            /* was 430px — wider */
+  text-align: left;
+  padding-bottom: 0;
+}
+.card-img {
+  width: 100%;
+  height: 350px;           /* was 300px — taller image */
+  overflow: hidden;
+}
+
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* This wraps all the text — gives it its own box */
+
+.btn-outline {
+  background-color: #1E1E1E;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  color: #F3D382;
+  font-size: 1.8rem;       /* bigger */
+  margin-bottom: 14px;
+  background: none;
+}
+
+.card-text {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--gray-text);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  background: none;
+}
+
+.stars {
+  color: #F3D382;
+  font-size: 2rem;         /* bigger stars */
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 20px;
+  background: none;
+}
+
+.card .btn-outline {
+  display: block;
+  margin: 0;
+  padding: 16px 24px 24px 24px;
+  border: none;
+  border-top: none;
+}
+
+.card .btn-outline {
+  display: inline-block;
+  border: 1px solid #F3D382;
+  color: #F3D382;
+  padding: 14px 30px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: none;
+  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);  /* add this line */
+}
+.card-body {
+  background-color: #222222;
+  padding: 24px 28px 28px 28px;   /* was 78px top 91px bottom — way too big */
+  box-shadow: 0 8px 25px rgba(243, 211, 130, 0.12);
+}
+/* =============================================
+   RESTAURANT INTERIOR BANNER
+   ============================================= */
+.banner-img {
+  margin-top: 120px;
+  width: 100%;
+  height: 400px;
+  background-color: #1E1E1E;  /* photo placeholder */
+  background-image: url('assets/interior.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* =============================================
+   OUR SPECIALITIES
+   ============================================= */
+.specialities {
+  background-color: #1E1E1E;
+  padding: 80px 0 0 0;
+  text-align: center;
+  /* remove overflow: hidden */
+}
+/* Tab buttons row */
+.tabs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;     /* centered like Figma */
+  flex-wrap: wrap;
+  margin-bottom: 120px;
+
+}
+
+.tab {
+    color: var(--white);
+    border: 2px solid #ffffff;
+    padding: 17px 39px;
+    text-decoration: none;
+    font-size: large;
+    letter-spacing: 1px;
+    background-color: transparent;
+    font-family:  'Dm Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+.tab.active {
+  background-color: var(--gold);
+  color: #1E1E1E;
+  border-color: var(--gold);
+}
+
+
+/* Each menu item = image + text side by side */
+.menu-item {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  height: auto;        /* fixed row height — this is the key */
+}
+/* .reverse flips the order (image on left) */
+.menu-item.reverse {
+  flex-direction: row-reverse;
+}
+.menu-info {
+  width: 45%;
+  flex: none;
+  padding: 50px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* keep vertical center */
+  align-items: flex-start;   /* LEFT align — add this */
+  text-align: left;          /* add this */
+}
+
+.menu-name {
+  font-family: 'Dm Sans', serif;
+  color: var(--gold);
+  font-size: 2rem;       /* bigger */
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  white-space: nowrap; 
+  text-align: left;    /* prevents line break */
+}
+.menu-ingredients {
+  color: var(--gray-text);
+  font-size: 1.35rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.menu-price {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #F3D382;
+  text-align: left; 
+}
+
+/* Image placeholder for menu items */
+
+.menu-photo {
+  width: 55%;              /* slightly wider photo */
+  flex: none;
+  overflow: hidden;
+}
+.menu-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: unset;
+}
+.menu-section {
+  padding: 0 60px;         /* add padding HERE instead, on each row */
+}
+/* =============================================
+   DINING EVENTS
+   ============================================= */
+.events {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.event-list {
+  list-style: none;
+  color: white;
+  font-size: 1.25rem;
+  line-height: 1.8;     /* was 2.4 — tighter */
+  margin-top: 8px;
+  margin-left: 80px;
+}
+.event-item {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.event-info {
+  width: 45%;
+  flex: none;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.event-photo {
+  width: 70%;
+  flex: none;
+  position: relative;
+  overflow: hidden;
+} 
+.event-photo img:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+} 
+
+.event-photo .event-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.event-info-right {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 2;
+}
+
+.event-info-right .event-list {
+  text-align: right;
+}
+
+.event-price {
+  font-family: 'Playfair Display', serif;
+  color: #F3D382;
+  font-size: 1.25rem;
+  margin-bottom: 8px;   /* was 16px — tighter */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-big {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;    /* was 2.4rem — smaller to match Figma */
+  color: #F3D382;
+  font-weight: 700;
+}
+.event-item.reverse {
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.event-item.reverse .event-info {
+  position: absolute;
+  right: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 3;
+  padding: 0;
+}
+
+.event-item.reverse .event-list {
+  text-align: right;
+}
+
+.event-item.reverse .event-photo {
+  width: 100%;    /* photo takes full width */
+}
+
+
+/* =============================================
+   FULL WIDTH FOOD PHOTO
+   ============================================= */
+.food-banner {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.food-banner img {
+  width: 100%;
+  display: block;
+}
+/* =============================================
+   OUR STORY
+   ============================================= */
+.story {
+  background-color: #1E1E1E;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.story-row {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  text-align: left;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  min-height: 500px;
+}
+
+.story-photos {
+  flex: 0 0 55%;        /* was 45% — wider */
+  height: 650px;        /* was 500px — taller */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+}
+
+.story-photo.top {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  overflow: hidden;
+}
+
+.story-photo.top img,
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-text {
+  flex: 1;
+}
+
+.story-text p {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.story-text .btn-outline {
+  margin-top: 10px;
+  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5); 
+}
+
+/* =============================================
+   FOOTER / CTA
+   ============================================= */
+.footer {
+  position: relative;
+  background-image: url('assets/story-2.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/Rectangle.png');
+  background-size: cover;
+  opacity: 0.9;
+}
+.footer-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #1E1E1E 0%, transparent 30%);  /* fades from dark at top to nothing */
+}
+.food-banner {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-height: 500px;     /* add this — limits the height */
+  overflow: hidden;
+}
+.food-banner img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;     /* add this — stops it from stretching */
+  display: block;
+}
+
+/* Dark overlay */
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.footer-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 60px;    /* was 40px — more gap below title */
+  color: #F3D382;
+}
+
+/* Two columns: address and phone */
+.footer-info {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 60px;    /* was 36px */
+}
+
+.footer-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.footer-col p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url('assets/logo2.png');
+  background-size: cover;
+  background-color: transparent;
+  margin: 80px auto 30px;  
+  margin-top: 130px;;
+}
+
+.social-links {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social-links span {
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+.social-links span:hover {
+  color: var(--gold);
+}
+.footer .btn-gold2 {       /* was 18px 50px */
+  font-size: 1.2rem;  
+  display: inline-block;
+  background-color: #F5BE32;
+  color: #1E1E1E;
+  padding: 12px 32px;
+  font-family: 'Cormorant SC', bold;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
