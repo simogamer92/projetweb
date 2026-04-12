@@ -1,6 +1,3 @@
-/* =============================================
-   RESET & BASE
-   ============================================= */
 * {
   margin: 0;
   padding: 0;
@@ -15,18 +12,20 @@ body {
 }
 
 /* =============================================
-   COLOR VARIABLES (easy to change)
+   COLOR VARIABLES
    ============================================= */
+
 :root {
-  --gold: #F3D382;    /* was #c9a84c */
+  --gold: #F3D382;
   --gold-light: #e0c070;
+  --white: #ffffff;
+  --gray-text: #aaaaaa;
 }
 
 /* =============================================
    REUSABLE HELPERS
    ============================================= */
 
-/* Gold italic small text above headings */
 .section-tag {
   font-family: 'great vibes', cursive;
   font-style: italic;
@@ -36,17 +35,15 @@ body {
   letter-spacing: 0.3rem;
 }
 
-/* Big section headings */
 .section-title {
   font-family: 'Cinzel', serif;
-  font-size: 2.2rem;           /* bigger */
+  font-size: 2.2rem;
   line-height: 1.15;
-  color: #F3D382;        /* back to gold */
+  color: #F3D382;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-/* Paragraph under section title */
 .section-desc {
   color: var(--gray-text);
   font-size: 1.25rem;
@@ -54,7 +51,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* Gold filled button */
 .btn-gold {
   display: inline-block;
   background-color: #E6A817;
@@ -66,19 +62,19 @@ body {
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);  /* golden glow around */
+  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);
 }
 
-/* Transparent button with gold border */
 .btn-outline {
   display: inline-block;
-  border: 1px solid #F3D382; 
-  color: #F3D382; 
+  border: 1px solid #F3D382;
+  color: #F3D382;
   padding: 10px 22px;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
+  background-color: transparent;
 }
 
 .btn-outline:hover,
@@ -89,6 +85,7 @@ body {
 /* =============================================
    NAVBAR
    ============================================= */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -100,20 +97,21 @@ body {
   top: 0;
   z-index: 10;
 }
+
 .logo-img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  object-fit: cover;     /* this prevents stretching */
+  object-fit: cover;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 36px;
-  position: absolute;      /* add this */
-  left: 50%;               /* add this */
-  transform: translateX(-50%);  /* add this — centers it perfectly */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links span {
@@ -142,6 +140,7 @@ body {
 /* =============================================
    HERO SECTION
    ============================================= */
+
 .hero {
   position: relative;
   height: 100vh;
@@ -149,35 +148,35 @@ body {
   background-size: cover;
   background-position: center top;
   display: flex;
-  align-items: center;       /* back to center — not flex-start */
+  align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 80px;         /* just offset for the navbar */
+  padding-top: 80px;
 }
 
-/* Dark overlay so text is readable over the photo */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background-image: url('assets/Rectangle.png');
-  
   background-size: cover;
 }
+
 .hero-fade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent 0%, transparent 100%, rgba(0, 0, 0, 0.4) 100%);   /* gentle fade */  /* matches body background */
+  background: linear-gradient(transparent 0%, transparent 100%, rgba(0, 0, 0, 0.4) 100%);
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 850px;
   padding: 0 20px;
-  margin-top: -80px;    /* pulls content slightly up */
+  margin-top: -80px;
 }
 
 .hero-subtitle {
-  font-family: 'Great Vibes', cursive;  /* more elegant italic */
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
   color: #ffffff;
   font-size: 1.3rem;
@@ -185,20 +184,20 @@ body {
   letter-spacing: 8px;
 }
 
-/* Change title to WHITE */
 .hero-title {
   font-family: 'Cinzel', serif;
-  font-size: 3.2rem;          /* between the two — not too big not too small */
+  font-size: 3.2rem;
   line-height: 1.2;
   color: #F3D382;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
+
 .hero-desc {
   color: #ffffff;
-  font-size: 1rem;         /* smaller — was 1.3rem */
-  line-height: 1.6;        /* tighter — was 2.2 */
-  margin-bottom: 36px;     /* less gap before button */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 36px;
   max-width: 360px;
   margin-left: auto;
   margin-right: auto;
@@ -207,19 +206,16 @@ body {
 /* =============================================
    TODAY'S SPECIAL
    ============================================= */
-/* Make special section same dark color as hero bottom */
-/* Match body bg so transition is invisible */
+
 .special {
   background-color: #1E1E1E;
   text-align: center;
-  padding: 62px 23px
+  padding: 62px 23px;
 }
-
-/* Row of 3 cards side by side */
 
 .cards-row {
   display: flex;
-  gap: 5px;                    /* thin gap so cards are separate */
+  gap: 5px;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -227,16 +223,16 @@ body {
 
 .card {
   background-color: #1E1E1E;
-  width: 500px;            /* was 430px — wider */
+  width: 500px;
   text-align: left;
   padding-bottom: 0;
 }
+
 .card-img {
   width: 100%;
-  height: 350px;           /* was 300px — taller image */
+  height: 350px;
   overflow: hidden;
 }
-
 
 .card-img img {
   width: 100%;
@@ -244,18 +240,12 @@ body {
   object-fit: cover;
   display: block;
 }
-/* This wraps all the text — gives it its own box */
-
-.btn-outline {
-  background-color: #1E1E1E;
-}
 
 .card-title {
   font-family: 'Cinzel', serif;
   color: #F3D382;
-  font-size: 1.8rem;       /* bigger */
+  font-size: 1.8rem;
   margin-bottom: 14px;
-  background: none;
 }
 
 .card-text {
@@ -264,24 +254,14 @@ body {
   font-size: 1.6rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  background: none;
 }
 
 .stars {
   color: #F3D382;
-  font-size: 2rem;         /* bigger stars */
+  font-size: 2rem;
   letter-spacing: 5px;
   display: block;
   margin-bottom: 20px;
-  background: none;
-}
-
-.card .btn-outline {
-  display: block;
-  margin: 0;
-  padding: 16px 24px 24px 24px;
-  border: none;
-  border-top: none;
 }
 
 .card .btn-outline {
@@ -294,21 +274,24 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   background: none;
-  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);  /* add this line */
+  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);
 }
+
 .card-body {
   background-color: #222222;
-  padding: 24px 28px 28px 28px;   /* was 78px top 91px bottom — way too big */
+  padding: 24px 28px 28px 28px;
   box-shadow: 0 8px 25px rgba(243, 211, 130, 0.12);
 }
+
 /* =============================================
-   RESTAURANT INTERIOR BANNER
+   INTERIOR BANNER
    ============================================= */
+
 .banner-img {
   margin-top: 120px;
   width: 100%;
   height: 400px;
-  background-color: #1E1E1E;  /* photo placeholder */
+  background-color: #1E1E1E;
   background-image: url('assets/interior.jpg');
   background-size: cover;
   background-position: center;
@@ -317,34 +300,32 @@ body {
 /* =============================================
    OUR SPECIALITIES
    ============================================= */
+
 .specialities {
   background-color: #1E1E1E;
   padding: 80px 0 0 0;
   text-align: center;
-  /* remove overflow: hidden */
 }
-/* Tab buttons row */
+
 .tabs {
   display: flex;
   gap: 20px;
-  justify-content: center;     /* centered like Figma */
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 120px;
-
 }
 
 .tab {
-    color: var(--white);
-    border: 2px solid #ffffff;
-    padding: 17px 39px;
-    text-decoration: none;
-    font-size: large;
-    letter-spacing: 1px;
-    background-color: transparent;
-    font-family:  'Dm Sans', sans-serif;
-    font-weight: 300;
+  color: var(--white);
+  border: 2px solid #ffffff;
+  padding: 17px 39px;
+  text-decoration: none;
+  font-size: large;
+  letter-spacing: 1px;
+  background-color: transparent;
+  font-family: 'Dm Sans', sans-serif;
+  font-weight: 300;
 }
-
 
 .tab.active {
   background-color: var(--gold);
@@ -352,39 +333,39 @@ body {
   border-color: var(--gold);
 }
 
-
-/* Each menu item = image + text side by side */
 .menu-item {
   display: flex;
   align-items: stretch;
   gap: 0;
   width: 100%;
-  height: auto;        /* fixed row height — this is the key */
+  height: auto;
 }
-/* .reverse flips the order (image on left) */
+
 .menu-item.reverse {
   flex-direction: row-reverse;
 }
+
 .menu-info {
   width: 45%;
   flex: none;
   padding: 50px 70px;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* keep vertical center */
-  align-items: flex-start;   /* LEFT align — add this */
-  text-align: left;          /* add this */
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .menu-name {
   font-family: 'Dm Sans', serif;
   color: var(--gold);
-  font-size: 2rem;       /* bigger */
+  font-size: 2rem;
   text-transform: uppercase;
   margin-bottom: 14px;
-  white-space: nowrap; 
-  text-align: left;    /* prevents line break */
+  white-space: nowrap;
+  text-align: left;
 }
+
 .menu-ingredients {
   color: var(--gray-text);
   font-size: 1.35rem;
@@ -398,29 +379,30 @@ body {
   font-size: 2rem;
   font-weight: 700;
   color: #F3D382;
-  text-align: left; 
+  text-align: left;
 }
 
-/* Image placeholder for menu items */
-
 .menu-photo {
-  width: 55%;              /* slightly wider photo */
+  width: 55%;
   flex: none;
   overflow: hidden;
 }
+
 .menu-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  min-height: unset;
 }
+
 .menu-section {
-  padding: 0 60px;         /* add padding HERE instead, on each row */
+  padding: 0 60px;
 }
+
 /* =============================================
    DINING EVENTS
    ============================================= */
+
 .events {
   padding: 80px 60px;
   text-align: center;
@@ -430,10 +412,11 @@ body {
   list-style: none;
   color: white;
   font-size: 1.25rem;
-  line-height: 1.8;     /* was 2.4 — tighter */
+  line-height: 1.8;
   margin-top: 8px;
   margin-left: 80px;
 }
+
 .event-item {
   display: flex;
   align-items: stretch;
@@ -457,7 +440,8 @@ body {
   flex: none;
   position: relative;
   overflow: hidden;
-} 
+}
+
 .event-photo img:first-child {
   position: absolute;
   inset: 0;
@@ -466,7 +450,7 @@ body {
   object-fit: cover;
   object-position: center;
   z-index: 0;
-} 
+}
 
 .event-photo .event-overlay {
   position: absolute;
@@ -478,35 +462,22 @@ body {
   pointer-events: none;
 }
 
-
-.event-info-right {
-  position: absolute;
-  top: 50%;
-  right: 80px;
-  transform: translateY(-50%);
-  text-align: right;
-  z-index: 2;
-}
-
-.event-info-right .event-list {
-  text-align: right;
-}
-
 .event-price {
   font-family: 'Playfair Display', serif;
   color: #F3D382;
   font-size: 1.25rem;
-  margin-bottom: 8px;   /* was 16px — tighter */
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .price-big {
   font-family: 'Cinzel', serif;
-  font-size: 1.8rem;    /* was 2.4rem — smaller to match Figma */
+  font-size: 1.8rem;
   color: #F3D382;
   font-weight: 700;
 }
+
 .event-item.reverse {
   flex-direction: row-reverse;
   position: relative;
@@ -527,26 +498,33 @@ body {
 }
 
 .event-item.reverse .event-photo {
-  width: 100%;    /* photo takes full width */
+  width: 100%;
 }
 
-
 /* =============================================
-   FULL WIDTH FOOD PHOTO
+   FOOD BANNER
    ============================================= */
+
 .food-banner {
   width: 100%;
   display: block;
   margin: 0;
   padding: 0;
+  max-height: 500px;
+  overflow: hidden;
 }
+
 .food-banner img {
   width: 100%;
+  height: 500px;
+  object-fit: cover;
   display: block;
 }
+
 /* =============================================
    OUR STORY
    ============================================= */
+
 .story {
   background-color: #1E1E1E;
   padding: 80px 60px;
@@ -564,8 +542,8 @@ body {
 }
 
 .story-photos {
-  flex: 0 0 55%;        /* was 45% — wider */
-  height: 650px;        /* was 500px — taller */
+  flex: 0 0 55%;
+  height: 650px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -598,12 +576,13 @@ body {
 
 .story-text .btn-outline {
   margin-top: 10px;
-  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5); 
+  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);
 }
 
 /* =============================================
-   FOOTER / CTA
+   FOOTER
    ============================================= */
+
 .footer {
   position: relative;
   background-image: url('assets/story-2.jpg');
@@ -624,27 +603,12 @@ body {
   background-size: cover;
   opacity: 0.9;
 }
+
 .footer-fade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #1E1E1E 0%, transparent 30%);  /* fades from dark at top to nothing */
+  background: linear-gradient(to bottom, #1E1E1E 0%, transparent 30%);
 }
-.food-banner {
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-  max-height: 500px;     /* add this — limits the height */
-  overflow: hidden;
-}
-.food-banner img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;     /* add this — stops it from stretching */
-  display: block;
-}
-
-/* Dark overlay */
 
 .footer-content {
   position: relative;
@@ -657,16 +621,15 @@ body {
   font-size: 3.4rem;
   text-transform: uppercase;
   line-height: 1.3;
-  margin-bottom: 60px;    /* was 40px — more gap below title */
+  margin-bottom: 60px;
   color: #F3D382;
 }
 
-/* Two columns: address and phone */
 .footer-info {
   display: flex;
   justify-content: center;
   gap: 80px;
-  margin-bottom: 60px;    /* was 36px */
+  margin-bottom: 60px;
 }
 
 .footer-col {
@@ -675,16 +638,29 @@ body {
   gap: 12px;
 }
 
-.icon {
-  font-size: 1.2rem;
-  margin-top: 2px;
-}
-
 .footer-col p {
   font-size: 1.1rem;
   line-height: 1.7;
   text-align: left;
-  gap: 20px;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-top: 4px;
+}
+
+.footer .btn-gold2 {
+  display: inline-block;
+  background-color: #F5BE32;
+  color: #1E1E1E;
+  padding: 12px 32px;
+  font-family: 'Cormorant SC', bold;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .footer-logo {
@@ -694,8 +670,7 @@ body {
   background-image: url('assets/logo2.png');
   background-size: cover;
   background-color: transparent;
-  margin: 80px auto 30px;  
-  margin-top: 130px;;
+  margin: 130px auto 30px;
 }
 
 .social-links {
@@ -717,16 +692,4 @@ body {
 
 .social-links span:hover {
   color: var(--gold);
-}
-.footer .btn-gold2 {       /* was 18px 50px */
-  font-size: 1.2rem;  
-  display: inline-block;
-  background-color: #F5BE32;
-  color: #1E1E1E;
-  padding: 12px 32px;
-  font-family: 'Cormorant SC', bold;
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  text-decoration: none;
 }
