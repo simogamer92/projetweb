@@ -1,9 +1,13 @@
 const toogle = document.getElementById("toogle");
-console.log(toogle);
+const navbar = document.getElementById("navbar");
+const overlay = document.getElementById("sidebar-overlay");
 
-const navbar = document.getElementById("navbar");   
-console.log(navbar);
+toogle.addEventListener("click", () => {
+  navbar.classList.toggle("apparait");
+  overlay.classList.toggle("active");
+});
 
-toogle.addEventListener("click", () =>  {
-navbar.classList.toggle("apparait" );
-})
+overlay.addEventListener("click", () => {
+  navbar.classList.remove("apparait");
+  overlay.classList.remove("active");
+});
