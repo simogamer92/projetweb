@@ -11,35 +11,40 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-<div id="sidebar-overlay"></div>
-  <!-- ======= NAVBAR ======= -->
-  <div class="navbar" id="navbar">
-  
-  <!-- MENU BUTTON (mobile) -->
-  <button id="toogle" class="menu-btn">☰</button>
 
+  <div id="sidebar-overlay"></div>
+
+  <!-- ======= NAVBAR ======= -->
+  <!-- HAMBURGER — outside navbar -->
+<button id="toogle" class="menu-btn" type="button">☰</button>
+
+<div class="navbar" id="navbar">
   <div class="logo">
     <img src="assets/logo.png" alt="Logo" class="logo-img" />
   </div>
-
   <ul class="nav-links">
     <li><span>Menu</span></li>
     <li><span>Fine Dining</span></li>
     <li><span>About</span></li>
     <li><span>Contact</span></li>
   </ul>
-
   <button type="button" class="btn-reserve">Reservation ——</button>
-
 </div>
+
+<!-- ONE overlay only -->
+<div id="sidebar-overlay"></div>
   <!-- ======= HERO ======= -->
   <section class="hero">
+    <img src="assets/hero-bg.jpg" alt="" class="hero-bg-img" />
     <div class="hero-overlay"></div>
     <div class="hero-fade"></div>
+
     <div class="hero-content">
       <p class="hero-subtitle"><em>Best Sushi In Town</em></p>
       <h1 class="hero-title">Taste The Rich Flavor Of<br />High Quality Sushi</h1>
-      <p class="hero-desc">We only use the five star quality for our menu, come and get the richness in every food we serve.</p>
+      <p class="hero-desc">
+        We only use the five star quality for our menu, come and get the richness in every food we serve.
+      </p>
       <button type="button" class="btn-gold">Go To Menu ——</button>
     </div>
   </section>
@@ -48,7 +53,9 @@
   <section class="special">
     <p class="section-tag"><em>Special Menu</em></p>
     <h2 class="section-title">Today's Special</h2>
-    <p class="section-desc">Special menu oftenly comes different everyday,<br />this is our special food for today</p>
+    <p class="section-desc">
+      Special menu oftenly comes different everyday,<br />this is our special food for today
+    </p>
 
     <div class="cards-row">
       <div class="card">
@@ -96,7 +103,9 @@
   <section class="specialities">
     <p class="section-tag"><em>Quality Food For You</em></p>
     <h2 class="section-title">Our Specialities</h2>
-    <p class="section-desc">Authentic food from our restaurant served<br />with high quality ingredients</p>
+    <p class="section-desc">
+      Authentic food from our restaurant served<br />with high quality ingredients
+    </p>
 
     <div class="tabs">
       <button type="button" class="tab active">Specialities</button>
@@ -112,7 +121,10 @@
       <div class="menu-item reverse">
         <div class="menu-info">
           <h3 class="menu-name">Dragon Sushi</h3>
-          <p class="menu-ingredients">Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna.</p>
+          <p class="menu-ingredients">
+            Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.
+            Donec vitae vulputate nunc, in laoreet urna.
+          </p>
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
@@ -125,7 +137,10 @@
       <div class="menu-item">
         <div class="menu-info">
           <h3 class="menu-name">Creamy Sushi</h3>
-          <p class="menu-ingredients">Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna.</p>
+          <p class="menu-ingredients">
+            Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.
+            Donec vitae vulputate nunc, in laoreet urna.
+          </p>
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
@@ -138,7 +153,10 @@
       <div class="menu-item reverse">
         <div class="menu-info">
           <h3 class="menu-name">Roll Salmon Sushi</h3>
-          <p class="menu-ingredients">Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus. Donec vitae vulputate nunc, in laoreet urna.</p>
+          <p class="menu-ingredients">
+            Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.
+            Donec vitae vulputate nunc, in laoreet urna.
+          </p>
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
@@ -152,7 +170,9 @@
   <section class="events">
     <p class="section-tag"><em>Choose Your Event</em></p>
     <h2 class="section-title">Dining Events</h2>
-    <p class="section-desc">We provide dining event for your special day<br />with your important people</p>
+    <p class="section-desc">
+      We provide dining event for your special day<br />with your important people
+    </p>
 
     <div class="tabs">
       <button type="button" class="tab active">Private Events</button>
@@ -216,7 +236,9 @@
   <section class="story">
     <p class="section-tag"><em>About Us</em></p>
     <h2 class="section-title">Our Story</h2>
-    <p class="section-desc">A journey for making successful luxury restaurant<br />with the best services</p>
+    <p class="section-desc">
+      A journey for making successful luxury restaurant<br />with the best services
+    </p>
 
     <div class="story-row">
       <div class="story-photos">
@@ -232,8 +254,15 @@
       </div>
 
       <div class="story-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fougiat urna id leo euismod rhoncus. Aliquam erat volutpat. Nulla id aliquam neque, at dignissim quam. Praesent et lacus accumsan, consequat nisl a, mattis sapien.</p>
-        <p>Nam sodales ullamcorper aliquet. Phasellus ut pretium libero, vitae imperdiet purus. Sed sed tincidunt velit. Aliquam vitae ipsum molestie, vehicula nisl quis, finibus leo.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fougiat urna id leo euismod rhoncus.
+          Aliquam erat volutpat. Nulla id aliquam neque, at dignissim quam. Praesent et lacus accumsan, consequat
+          nisl a, mattis sapien.
+        </p>
+        <p>
+          Nam sodales ullamcorper aliquet. Phasellus ut pretium libero, vitae imperdiet purus.
+          Sed sed tincidunt velit. Aliquam vitae ipsum molestie, vehicula nisl quis, finibus leo.
+        </p>
         <button type="button" class="btn-outline">More About Us ——</button>
       </div>
     </div>
@@ -269,5 +298,6 @@
     </div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
