@@ -1,20 +1,46 @@
+/* =============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================= */
+
+:root {
+  --gold: #F3D382;
+  --gold-dark: #E6A817;
+  --gold-light: #e0c070;
+  --gold-reserve: #F5BE32;
+  --bg-dark: #1E1E1E;
+  --bg-card: #222222;
+  --white: #ffffff;
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --shadow-gold: 0 0 15px rgba(243, 211, 130, 0.6);
+  --shadow-gold-sm: 0 0 10px 2px rgba(236, 209, 146, 0.5);
+  --shadow-card: 0 8px 25px rgba(243, 211, 130, 0.12);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #1E1E1E;
-  color: #ffffff;
-  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--white);
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
   font-weight: 300;
 }
 
-:root {
-  --gold: #F3D382;
-  --gold-light: #e0c070;
-  --white: #ffffff;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* =============================================
@@ -22,9 +48,9 @@ body {
    ============================================= */
 
 .section-tag {
-  font-family: 'great vibes', cursive;
+  font-family: 'Great Vibes', cursive;
   font-style: italic;
-  color: #ffffff;
+  color: var(--white);
   font-size: 1rem;
   margin-bottom: 8px;
   letter-spacing: 0.3rem;
@@ -34,7 +60,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 2.2rem;
   line-height: 1.15;
-  color: #F3D382;
+  color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -48,33 +74,43 @@ body {
 
 .btn-gold {
   display: inline-block;
-  background-color: #E6A817;
-  color: #1E1E1E;
+  background-color: var(--gold-dark);
+  color: var(--bg-dark);
   padding: 18px 50px;
-  font-family: 'Cormorant SC', bold;
+  font-family: 'Cormorant SC', serif;
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);
+  box-shadow: var(--shadow-gold-sm);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
 }
 
 .btn-outline {
   display: inline-block;
-  border: 1px solid #F3D382;
-  color: #F3D382;
+  border: 1px solid var(--gold);
+  color: var(--gold);
   padding: 10px 22px;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
   background-color: transparent;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
 }
 
-.btn-outline:hover,
+.btn-outline:hover {
+  background-color: var(--gold);
+  color: var(--bg-dark);
+  transform: translateY(-1px);
+}
+
 .btn-gold:hover {
   opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 /* =============================================
@@ -97,7 +133,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'cormorant sc', serif;
+  font-family: 'Cormorant SC', serif;
   padding: 18px 60px;
   position: absolute;
   width: 100%;
@@ -122,15 +158,17 @@ button {
   transform: translateX(-50%);
 }
 
-.nav-links span {
+.nav-links a {
   text-decoration: none;
+  color: var(--white);
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: color var(--transition-fast);
 }
 
-.nav-links span:hover {
+.nav-links a:hover {
   color: var(--gold);
 }
 
@@ -142,7 +180,14 @@ button {
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);
+  box-shadow: var(--shadow-gold);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-reserve:hover {
+  background-color: var(--gold);
+  color: var(--bg-dark);
 }
 
 .menu-btn {
@@ -154,6 +199,7 @@ button {
   padding: 7px 12px;
   line-height: 1;
   z-index: 40;
+  cursor: pointer;
 }
 
 /* =============================================
@@ -217,7 +263,7 @@ button {
 .hero-subtitle {
   font-family: 'Great Vibes', cursive;
   font-style: italic;
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.3rem;
   margin-bottom: 24px;
   letter-spacing: 8px;
@@ -227,13 +273,13 @@ button {
   font-family: 'Cinzel', serif;
   font-size: 3.2rem;
   line-height: 1.2;
-  color: #F3D382;
+  color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 24px;
 }
 
 .hero-desc {
-  color: #ffffff;
+  color: var(--white);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 36px;
@@ -247,7 +293,7 @@ button {
    ============================================= */
 
 .special {
-  background-color: #1E1E1E;
+  background-color: var(--bg-dark);
   text-align: center;
   padding: 62px 23px;
 }
@@ -261,10 +307,15 @@ button {
 }
 
 .card {
-  background-color: #1E1E1E;
+  background-color: var(--bg-dark);
   width: 500px;
   text-align: left;
   padding-bottom: 0;
+  transition: transform var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card-img {
@@ -278,11 +329,16 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform var(--transition-medium);
+}
+
+.card:hover .card-img img {
+  transform: scale(1.05);
 }
 
 .card-title {
   font-family: 'Cinzel', serif;
-  color: #F3D382;
+  color: var(--gold);
   font-size: 1.8rem;
   margin-bottom: 14px;
 }
@@ -296,7 +352,7 @@ button {
 }
 
 .stars {
-  color: #F3D382;
+  color: var(--gold);
   font-size: 2rem;
   letter-spacing: 5px;
   display: block;
@@ -305,21 +361,26 @@ button {
 
 .card .btn-outline {
   display: inline-block;
-  border: 1px solid #F3D382;
-  color: #F3D382;
+  border: 1px solid var(--gold);
+  color: var(--gold);
   padding: 14px 30px;
   font-size: 0.9rem;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
   background: none;
-  box-shadow: 0 0 15px rgba(243, 211, 130, 0.6);
+  box-shadow: var(--shadow-gold);
+}
+
+.card .btn-outline:hover {
+  background-color: var(--gold);
+  color: var(--bg-dark);
 }
 
 .card-body {
-  background-color: #222222;
+  background-color: var(--bg-card);
   padding: 24px 28px 28px 28px;
-  box-shadow: 0 8px 25px rgba(243, 211, 130, 0.12);
+  box-shadow: var(--shadow-card);
 }
 
 /* =============================================
@@ -330,7 +391,7 @@ button {
   margin-top: 120px;
   width: 100%;
   height: 400px;
-  background-color: #1E1E1E;
+  background-color: var(--bg-dark);
   background-image: url('assets/interior.jpg');
   background-size: cover;
   background-position: center;
@@ -341,7 +402,7 @@ button {
    ============================================= */
 
 .specialities {
-  background-color: #1E1E1E;
+  background-color: var(--bg-dark);
   padding: 80px 0 0 0;
   text-align: center;
 }
@@ -355,21 +416,27 @@ button {
 }
 
 .tab {
-  border: 2px solid #ffffff;
+  border: 2px solid var(--white);
   background: transparent;
   color: var(--white);
   padding: 17px 39px;
   font-size: large;
   letter-spacing: 1px;
-  font-family: 'Dm Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   cursor: pointer;
   outline: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .tab.active {
   background-color: var(--gold);
-  color: #1E1E1E;
+  color: var(--bg-dark);
   border-color: var(--gold);
 }
 
@@ -397,7 +464,7 @@ button {
 }
 
 .menu-name {
-  font-family: 'Dm Sans', serif;
+  font-family: 'DM Sans', serif;
   color: var(--gold);
   font-size: 2rem;
   text-transform: uppercase;
@@ -418,7 +485,7 @@ button {
   font-family: 'Cinzel', serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #F3D382;
+  color: var(--gold);
   text-align: left;
 }
 
@@ -433,6 +500,11 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform var(--transition-medium);
+}
+
+.menu-photo:hover img {
+  transform: scale(1.03);
 }
 
 .menu-section {
@@ -450,7 +522,7 @@ button {
 
 .event-list {
   list-style: none;
-  color: white;
+  color: var(--white);
   font-size: 1.25rem;
   line-height: 1.8;
   margin-top: 8px;
@@ -490,6 +562,11 @@ button {
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  transition: transform var(--transition-medium);
+}
+
+.event-photo:hover img:first-child {
+  transform: scale(1.03);
 }
 
 .event-photo .event-overlay {
@@ -504,7 +581,7 @@ button {
 
 .event-price {
   font-family: 'Playfair Display', serif;
-  color: #F3D382;
+  color: var(--gold);
   font-size: 1.25rem;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -514,7 +591,7 @@ button {
 .price-big {
   font-family: 'Cinzel', serif;
   font-size: 1.8rem;
-  color: #F3D382;
+  color: var(--gold);
   font-weight: 700;
 }
 
@@ -566,7 +643,7 @@ button {
    ============================================= */
 
 .story {
-  background-color: #1E1E1E;
+  background-color: var(--bg-dark);
   padding: 80px 60px;
   text-align: center;
 }
@@ -616,7 +693,7 @@ button {
 
 .story-text .btn-outline {
   margin-top: 10px;
-  box-shadow: 0 0 10px 2px rgba(236, 209, 146, 0.5);
+  box-shadow: var(--shadow-gold-sm);
 }
 
 /* =============================================
@@ -647,7 +724,7 @@ button {
 .footer-fade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #1E1E1E 0%, transparent 30%);
+  background: linear-gradient(to bottom, var(--bg-dark) 0%, transparent 30%);
 }
 
 .footer-content {
@@ -662,7 +739,7 @@ button {
   text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 60px;
-  color: #F3D382;
+  color: var(--gold);
 }
 
 .footer-info {
@@ -684,6 +761,16 @@ button {
   text-align: left;
 }
 
+.footer-phone {
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-phone:hover {
+  color: var(--gold);
+}
+
 .footer-icon {
   width: 20px;
   height: 20px;
@@ -693,14 +780,21 @@ button {
 
 .footer .btn-gold2 {
   display: inline-block;
-  background-color: #F5BE32;
-  color: #1E1E1E;
+  background-color: var(--gold-reserve);
+  color: var(--bg-dark);
   padding: 12px 32px;
-  font-family: 'Cormorant SC', bold;
+  font-family: 'Cormorant SC', serif;
   font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-decoration: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.footer .btn-gold2:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .footer-logo {
@@ -720,7 +814,7 @@ button {
   gap: 40px;
 }
 
-.social-links span {
+.social-links a {
   font-family: 'Cinzel', serif;
   font-weight: 500;
   font-size: 0.8rem;
@@ -728,9 +822,12 @@ button {
   cursor: pointer;
   border-bottom: 2px solid var(--gold);
   padding-bottom: 4px;
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-.social-links span:hover {
+.social-links a:hover {
   color: var(--gold);
 }
 
@@ -744,6 +841,7 @@ button {
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
   z-index: 98;
+  cursor: pointer;
 }
 
 #sidebar-overlay.active {
@@ -757,29 +855,30 @@ button {
 @media (max-width: 768px) {
 
   .menu-btn {
-  display: block;
-  position: fixed;
-  top: 18px;
-  left: 16px;
-  z-index: 200;
-}
+    display: block;
+    position: fixed;
+    top: 18px;
+    left: 16px;
+    z-index: 200;
+  }
 
   .navbar {
-  position: fixed;
-  top: 0;
-  left: -270px;
-  width: 260px;
-  height: 100vh;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 60px 30px 40px;
-  background-color: #181818;
-  border-right: 1px solid rgba(243, 211, 130, 0.25);
-  z-index: 99;
-  transition: left 0.3s ease;
-  gap: 32px;
-}
+    position: fixed;
+    top: 0;
+    left: -270px;
+    width: 260px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px 30px 40px;
+    background-color: #181818;
+    border-right: 1px solid rgba(243, 211, 130, 0.25);
+    z-index: 99;
+    transition: left var(--transition-medium);
+    gap: 32px;
+  }
+
   .navbar .logo {
     display: flex;
     justify-content: center;
@@ -791,35 +890,37 @@ button {
     height: 48px;
   }
 
- 
-
   .nav-links {
-  display: flex;
-  position: static;
-  transform: none;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-}
-.nav-links li {
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  width: 100%;
-}
-.nav-links span {
-  font-size: 0.95rem;
-  letter-spacing: 3px;
-}
-.btn-reserve {
-  width: 100%;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 0.72rem;
-}
-  
-  .navbar.apparait {
-  left: 0;
+    display: flex;
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
   }
+
+  .nav-links li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+  }
+
+  .btn-reserve {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.72rem;
+  }
+
+  .navbar.apparait {
+    left: 0;
+  }
+
   .hero {
     min-height: 100vh;
     height: 100vh;
@@ -1063,6 +1164,4 @@ button {
     align-items: center;
     padding: 0 20px;
   }
-
-
 }
