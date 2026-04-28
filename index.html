@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dani's Sushi Restaurant — taste the rich flavor of high quality sushi. Fine dining, special events, and authentic Japanese cuisine." />
   <title>Dani's Sushi Restaurant</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+SC:wght@300;400;500;600;700&family=Great+Vibes&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Single consolidated Google Fonts request -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+SC:wght@300;400;500;600;700&family=Great+Vibes&family=Space+Grotesk:wght@300..700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
+  <!-- ======= SIDEBAR OVERLAY (single instance) ======= -->
   <div id="sidebar-overlay"></div>
 
   <!-- ======= NAVBAR ======= -->
-<button id="toogle" class="menu-btn" type="button">☰</button>
+  <button id="toggle" class="menu-btn" type="button" aria-label="Open navigation menu">☰</button>
 
-<div class="navbar" id="navbar">
-  <div class="logo">
-    <img src="assets/logo.png" alt="Logo" class="logo-img" />
-  </div>
-  <ul class="nav-links">
-    <li><span>Menu</span></li>
-    <li><span>Fine Dining</span></li>
-    <li><span>About</span></li>
-    <li><span>Contact</span></li>
-  </ul>
-  <button type="button" class="btn-reserve">Reservation ——</button>
-</div>
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Dani's Sushi Logo" class="logo-img" width="55" height="55" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#special">Menu</a></li>
+      <li><a href="#events">Fine Dining</a></li>
+      <li><a href="#story">About</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <button type="button" class="btn-reserve" id="btn-reserve">Reservation ——</button>
+  </nav>
 
-<!-- ONE overlay only -->
-<div id="sidebar-overlay"></div>
   <!-- ======= HERO ======= -->
-  <section class="hero">
-    <img src="assets/hero-bg.jpg" alt="" class="hero-bg-img" />
+  <section class="hero" id="hero">
+    <img src="assets/hero-bg.jpg" alt="Sushi restaurant ambiance" class="hero-bg-img" />
     <div class="hero-overlay"></div>
     <div class="hero-fade"></div>
 
@@ -44,12 +44,12 @@
       <p class="hero-desc">
         We only use the five star quality for our menu, come and get the richness in every food we serve.
       </p>
-      <button type="button" class="btn-gold">Go To Menu ——</button>
+      <button type="button" class="btn-gold" id="btn-go-to-menu">Go To Menu ——</button>
     </div>
   </section>
 
   <!-- ======= TODAY'S SPECIAL ======= -->
-  <section class="special">
+  <section class="special" id="special">
     <p class="section-tag"><em>Special Menu</em></p>
     <h2 class="section-title">Today's Special</h2>
     <p class="section-desc">
@@ -59,54 +59,54 @@
     <div class="cards-row">
       <div class="card">
         <div class="card-img">
-          <img src="assets/sushi1.png" alt="tuna sushi">
+          <img src="assets/sushi1.png" alt="Tuna sushi on a plate" loading="lazy">
         </div>
         <div class="card-body">
           <h3 class="card-title">Tuna Sushi</h3>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.</p>
-          <div class="stars">★★★★★</div>
-          <button type="button" class="btn-outline">Order Now ——</button>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <button type="button" class="btn-outline" id="btn-order-tuna">Order Now ——</button>
         </div>
       </div>
 
       <div class="card">
         <div class="card-img">
-          <img src="assets/sushi2.png" alt="salmon sushi">
+          <img src="assets/sushi2.png" alt="Salmon sushi on a plate" loading="lazy">
         </div>
         <div class="card-body">
           <h3 class="card-title">Salmon Sushi</h3>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.</p>
-          <div class="stars">★★★★★</div>
-          <button type="button" class="btn-outline">Order Now ——</button>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <button type="button" class="btn-outline" id="btn-order-salmon">Order Now ——</button>
         </div>
       </div>
 
       <div class="card">
         <div class="card-img">
-          <img src="assets/sushi3.png" alt="just sushi">
+          <img src="assets/sushi3.png" alt="Assorted sushi platter" loading="lazy">
         </div>
         <div class="card-body">
           <h3 class="card-title">Just Sushi</h3>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut imperdiet lectus.</p>
-          <div class="stars">★★★★★</div>
-          <button type="button" class="btn-outline">Order Now ——</button>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <button type="button" class="btn-outline" id="btn-order-sushi">Order Now ——</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======= INTERIOR BANNER ======= -->
-  <div class="banner-img"></div>
+  <div class="banner-img" role="img" aria-label="Restaurant interior"></div>
 
   <!-- ======= OUR SPECIALITIES ======= -->
-  <section class="specialities">
+  <section class="specialities" id="specialities">
     <p class="section-tag"><em>Quality Food For You</em></p>
     <h2 class="section-title">Our Specialities</h2>
     <p class="section-desc">
       Authentic food from our restaurant served<br />with high quality ingredients
     </p>
 
-    <div class="tabs">
+    <div class="tabs" id="specialities-tabs">
       <button type="button" class="tab active">Specialities</button>
       <button type="button" class="tab">Homestyle Sushi</button>
       <button type="button" class="tab">Steak</button>
@@ -127,7 +127,7 @@
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
-          <img src="assets/dragon_sushi.png" alt="Dragon Sushi">
+          <img src="assets/dragon_sushi.png" alt="Dragon Sushi" loading="lazy">
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
-          <img src="assets/creamy_sushi.png" alt="Creamy Sushi">
+          <img src="assets/creamy_sushi.png" alt="Creamy Sushi" loading="lazy">
         </div>
       </div>
     </div>
@@ -159,21 +159,21 @@
           <p class="menu-price">$50</p>
         </div>
         <div class="menu-photo">
-          <img src="assets/roll.png" alt="Roll Salmon Sushi">
+          <img src="assets/roll.png" alt="Roll Salmon Sushi" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======= DINING EVENTS ======= -->
-  <section class="events">
+  <section class="events" id="events">
     <p class="section-tag"><em>Choose Your Event</em></p>
     <h2 class="section-title">Dining Events</h2>
     <p class="section-desc">
       We provide dining event for your special day<br />with your important people
     </p>
 
-    <div class="tabs">
+    <div class="tabs" id="events-tabs">
       <button type="button" class="tab active">Private Events</button>
       <button type="button" class="tab">Corporate Events</button>
     </div>
@@ -189,7 +189,7 @@
           </ul>
         </div>
         <div class="event-photo">
-          <img src="assets/finedining1.png" alt="Fine Dining">
+          <img src="assets/finedining1.png" alt="Fine Dining experience" loading="lazy">
           <img src="assets/Rectangle1.png" class="event-overlay" alt="">
         </div>
       </div>
@@ -204,7 +204,7 @@
           </ul>
         </div>
         <div class="event-photo">
-          <img src="assets/finedining2.png" alt="Gold Dining">
+          <img src="assets/finedining2.png" alt="Gold Dining experience" loading="lazy">
           <img src="assets/Rectangle2.png" class="event-overlay" alt="">
         </div>
       </div>
@@ -219,7 +219,7 @@
           </ul>
         </div>
         <div class="event-photo">
-          <img src="assets/finedining3.png" alt="Royalty Dining">
+          <img src="assets/finedining3.png" alt="Royalty Dining experience" loading="lazy">
           <img src="assets/Rectangle3.png" class="event-overlay" alt="">
         </div>
       </div>
@@ -228,11 +228,11 @@
 
   <!-- ======= FOOD BANNER ======= -->
   <div class="food-banner">
-    <img src="assets/food-banner.jpg" alt="Food Banner">
+    <img src="assets/food-banner.jpg" alt="Assortment of our finest dishes" loading="lazy">
   </div>
 
   <!-- ======= OUR STORY ======= -->
-  <section class="story">
+  <section class="story" id="story">
     <p class="section-tag"><em>About Us</em></p>
     <h2 class="section-title">Our Story</h2>
     <p class="section-desc">
@@ -242,13 +242,13 @@
     <div class="story-row">
       <div class="story-photos">
         <div class="story-photo top">
-          <img src="assets/cheftall.png" alt="chef">
+          <img src="assets/cheftall.png" alt="Head chef at work" loading="lazy">
         </div>
         <div class="story-photo">
-          <img src="assets/chef1.png" alt="chef 1">
+          <img src="assets/chef1.png" alt="Chef preparing sushi" loading="lazy">
         </div>
         <div class="story-photo">
-          <img src="assets/chef2.png" alt="chef 2">
+          <img src="assets/chef2.png" alt="Chef plating a dish" loading="lazy">
         </div>
       </div>
 
@@ -262,13 +262,13 @@
           Nam sodales ullamcorper aliquet. Phasellus ut pretium libero, vitae imperdiet purus.
           Sed sed tincidunt velit. Aliquam vitae ipsum molestie, vehicula nisl quis, finibus leo.
         </p>
-        <button type="button" class="btn-outline">More About Us ——</button>
+        <button type="button" class="btn-outline" id="btn-about-us">More About Us ——</button>
       </div>
     </div>
   </section>
 
   <!-- ======= FOOTER ======= -->
-  <div class="footer">
+  <footer class="footer" id="footer">
     <div class="footer-overlay"></div>
     <div class="footer-fade"></div>
     <div class="footer-content">
@@ -276,26 +276,26 @@
 
       <div class="footer-info">
         <div class="footer-col">
-          <img src="assets/Vector.png" alt="location" class="footer-icon" />
+          <img src="assets/Vector.png" alt="" class="footer-icon" width="20" height="20" />
           <p>Jendral Sudirman Street Pahoman<br />Bandar Lampung, Lampung, 36222</p>
         </div>
         <div class="footer-col">
-          <img src="assets/Vector_phone.png" alt="phone" class="footer-icon" />
-          <p>Call us:<br />+0721 471 285</p>
+          <img src="assets/Vector_phone.png" alt="" class="footer-icon" width="20" height="20" />
+          <p>Call us:<br /><a href="tel:+0721471285" class="footer-phone">+0721 471 285</a></p>
         </div>
       </div>
 
-      <button type="button" class="btn-gold2">Reserve a Table</button>
+      <button type="button" class="btn-gold2" id="btn-reserve-table">Reserve a Table</button>
 
       <div class="footer-logo"></div>
 
       <div class="social-links">
-        <span>Instagram</span>
-        <span>Twitter</span>
-        <span>Facebook</span>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
       </div>
     </div>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
